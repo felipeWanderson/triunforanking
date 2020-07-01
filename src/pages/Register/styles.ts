@@ -70,7 +70,7 @@ export const Field = styled.div`
   }
 
   & + div {
-    margin-left: 10px;
+    margin-left: 24px;
   }
 
   textarea {
