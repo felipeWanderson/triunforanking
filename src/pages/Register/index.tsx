@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from '../../Components/Header';
+import Success from '../../Components/Success';
 import { Container, Field, FieldGroup, Button } from './styles';
 
 const Register: React.FC = () => {
+  const [visible, setVisible] = useState(false);
+
+  const handleRegisterSale = () => {
+    setVisible(!visible);
+  };
+
   return (
     <>
       <Header size="small" />
+      <Success visible={visible} />
       <Container>
         <h1>Cadastrar venda</h1>
         <form>
@@ -54,11 +62,25 @@ const Register: React.FC = () => {
           <FieldGroup>
             <Field>
               <label htmlFor="coodSale">Coordenador da Venda</label>
-              <input id="coodSale" name="coodSale" type="text" />
+              <select name="coodSale" id="coodSale">
+                <option selected value="0" disabled>
+                  Coordenador da Venda
+                </option>
+                <option value="gregory">Gregory</option>
+                <option value="rossilene">Rossilene</option>
+                <option value="joseRocha">José Rocha</option>
+              </select>
             </Field>
             <Field>
               <label htmlFor="DirSale">Gerente ou Diretor(a) da venda</label>
-              <input id="DirSale" name="DirSale" type="text" />
+              <select name="DirSale" id="DirSale">
+                <option selected value="0" disabled>
+                  Gerente ou Diretor(a) da venda
+                </option>
+                <option value="cristiane/raunin">Cristiane/Raunin</option>
+                <option value="talita/harryson">Talita/Harryson</option>
+                <option value="meire/emerson">Meire/Emerson</option>
+              </select>
             </Field>
           </FieldGroup>
 
@@ -129,7 +151,9 @@ const Register: React.FC = () => {
             </textarea>
           </Field>
 
-          <Button type="submit">Cadastrar venda</Button>
+          <Button type="submit" onSubmit={handleRegisterSale}>
+            Cadastrar venda
+          </Button>
         </form>
       </Container>
     </>

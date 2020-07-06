@@ -7,7 +7,8 @@ export default createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
   }
-  body {
+  body, html, #root {
+    height: 100%;
     background: #e5e5e5;
     -webkit-font-smoothing: antialiased;
   }

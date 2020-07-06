@@ -69,6 +69,26 @@ export const Field = styled.div`
     color: #6c6c80;
   }
 
+  select {
+    flex: 1;
+    background: #f0f0f5;
+    border-radius: 8px;
+    border: 0;
+    padding: 20px 24px;
+    font-size: 16px;
+    color: #6c6c80;
+
+    option:hover {
+      flex: 1;
+      background: #f0f0f5;
+      border-radius: 8px;
+      border: 0;
+      padding: 20px 24px;
+      font-size: 16px;
+      color: #6c6c80;
+    }
+  }
+
   & + div {
     margin-left: 24px;
   }
